@@ -3,7 +3,6 @@ package gr.aueb.cf.schoolapp.dao;
 import gr.aueb.cf.schoolapp.dao.dbutil.DBHelper;
 import gr.aueb.cf.schoolapp.dao.exceptions.TeacherDAOException;
 import gr.aueb.cf.schoolapp.model.Teacher;
-import gr.aueb.cf.schoolapp.validator.TeacherValidator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +33,6 @@ class TeacherDAOTest {
         DBHelper.eraseData();
     }
 
-
     @Test
     void persistAndGetTeacher() throws TeacherDAOException {
         Teacher teacher = new Teacher();
@@ -42,10 +40,9 @@ class TeacherDAOTest {
         teacher.setLastname("Marley");
         teacherDAO.insert(teacher);
 
-        List<Teacher> teachers = teacherDAO.getByLastname("Marley");
+        List<Teacher> teachers = teacherDAO.getByLastname("Marl");
         assertEquals(1, teachers.size());
     }
-
 
     public static void createDummyTeachers() throws TeacherDAOException {
         Teacher teacher = new Teacher();

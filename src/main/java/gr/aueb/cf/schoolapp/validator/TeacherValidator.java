@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TeacherValidator {
-    private static final Map<String, String> errors = new HashMap<>();
 
     private TeacherValidator() {}
 
     public static Map<String, String> validate(TeacherInsertDTO dto) {
+        Map<String, String> errors = new HashMap<>();
         if (dto.getFirstname().length() < 3 || dto.getFirstname().length() > 32) {
             errors.put("firstname", "size");
         }
