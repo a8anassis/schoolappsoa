@@ -90,7 +90,7 @@ public class TeacherDAOImpl implements ITeacherDAO {
              PreparedStatement ps = connection.prepareStatement(sql);
              ) {
             ResultSet rs;
-            //ps.setString(1, Main.getTeachersSearchForm().getLastname() + "%");
+            // ps.setString(1, Main.getTeachersSearchForm().getLastname() + "%");
             ps.setString(1, lastname + "%");
             rs = ps.executeQuery();
 
